@@ -16,6 +16,19 @@ public class Memory {
 
 
 
+    public static Memory createMemory() {
+        return new Memory();
+    }
+
+    public static Memory createMemoryReadDisplay(boolean isRead, boolean isDisplay) {
+        return new Memory(isRead,isDisplay);
+    }
+
+
+
+
+
+
     public Memory() {
         readFile();
         displayMemory();
