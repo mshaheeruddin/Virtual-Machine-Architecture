@@ -17,11 +17,11 @@ public class SpecialPurposeRegister {
     }
 
 
-    SpecialPurposeRegister() {
+    private SpecialPurposeRegister() {
 
     }
 
-    SpecialPurposeRegister(boolean isDisplay) {
+    private SpecialPurposeRegister(boolean isDisplay) {
         SPR[0] = 0;
         for (int i = 1; i < SPR.length; i++) {
             SPR[i] = 0;

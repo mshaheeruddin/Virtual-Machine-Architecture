@@ -29,13 +29,13 @@ public class Memory {
 
 
 
-    public Memory() {
+    private Memory() {
         readFile();
         displayMemory();
 
     }
 
-    public Memory(boolean fileReading, boolean displayingMemoryArray) {
+    private Memory(boolean fileReading, boolean displayingMemoryArray) {
         if (fileReading) readFile();
         if (displayingMemoryArray) displayMemory();
     }
