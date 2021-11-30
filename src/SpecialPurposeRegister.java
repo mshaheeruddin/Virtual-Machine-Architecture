@@ -8,7 +8,13 @@ public class SpecialPurposeRegister {
 
 
     byte[] SPR = new byte[16];
-    Memory memory = new Memory(true, false);
+    Memory memory = Memory.createMemoryReadDisplay(true,false);
+
+
+    public static SpecialPurposeRegister createSPR(boolean isDisplay) {
+        if (!isDisplay) return new SpecialPurposeRegister();
+        else return new SpecialPurposeRegister(true);
+    }
 
 
     SpecialPurposeRegister() {

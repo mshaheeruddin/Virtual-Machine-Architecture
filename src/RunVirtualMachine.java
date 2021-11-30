@@ -3,7 +3,7 @@ public class RunVirtualMachine {
         Memory memory = new Memory();
         GeneralPurposeRegister gpr = new GeneralPurposeRegister(false);
         gpr.updateGPR();
-        SpecialPurposeRegister spr = new SpecialPurposeRegister(false);
+        SpecialPurposeRegister spr = SpecialPurposeRegister.createSPR(false);
         //InstructionSet ir = new InstructionSet();
         //gpr.displayRegister();
         //spr.displaySPR();
