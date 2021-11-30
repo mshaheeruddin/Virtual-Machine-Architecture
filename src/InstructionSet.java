@@ -65,7 +65,7 @@ public class InstructionSet {
 
     //opcode = 19
     public void MUL(Memory mem, GeneralPurposeRegister gpr, SpecialPurposeRegister spr, int position) {
-        spr.setInstructionRegister((byte) 23);
+        spr.setInstructionRegister((byte) 25);
         spr.setProgramCounter(position);
         spr.incrementProgramCounter();
         int reg1 = mem.memory[spr.getProgramCounter()];

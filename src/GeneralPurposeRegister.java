@@ -3,8 +3,10 @@ public class GeneralPurposeRegister {
 
     short[] GPR = new short[16];
     Memory memory = Memory.createMemoryReadDisplay(false,false);
+    Memory memoryWithRead = Memory.createMemoryReadDisplay(true,false);
     SpecialPurposeRegister spr = SpecialPurposeRegister.createSPR(false);
-    
+
+
 
 
     GeneralPurposeRegister() {
@@ -49,60 +51,60 @@ public class GeneralPurposeRegister {
             switch (hexInstruction[i]) {
                 case "16":
                     spr.setInstructionRegister((byte) 22);
-                    instructionSet.MOV(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(false), spr, i);
+                    instructionSet.MOV(memoryWithRead, GeneralPurposeRegister.createGPR(false), spr, i);
                     break;
                 //ADD Reg-Reg
                 case "17":
                     spr.setInstructionRegister((byte) 23);
-                    instructionSet.ADD(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(false), spr, i);
+                    instructionSet.ADD(memoryWithRead, GeneralPurposeRegister.createGPR(false), spr, i);
                     break;
                 case "18":
                     spr.setInstructionRegister((byte) 24);
-                    instructionSet.SUB(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(false), spr, i);
+                    instructionSet.SUB(memoryWithRead, GeneralPurposeRegister.createGPR(false), spr, i);
                     break;
                 case "19":
                     spr.setInstructionRegister((byte) 25);
-                    instructionSet.MUL(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(false), spr, i);
+                    instructionSet.MUL(memoryWithRead, GeneralPurposeRegister.createGPR(false), spr, i);
                     break;
                 case "1a":
                     spr.setInstructionRegister((byte) 26);
-                    instructionSet.DIV(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(false), spr, i);
+                    instructionSet.DIV(memoryWithRead, GeneralPurposeRegister.createGPR(false), spr, i);
                     break;
                 case "1b":
                     spr.setInstructionRegister((byte) 27);
-                    instructionSet.AND(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.AND(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "1c":
                     spr.setInstructionRegister((byte) 28);
-                    instructionSet.OR(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.OR(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "30":
                     spr.setInstructionRegister((byte) 48);
-                    instructionSet.MOVI(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.MOVI(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "31":
                     spr.setInstructionRegister((byte) 49);
-                    instructionSet.ADDI(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.ADDI(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "32":
                     spr.setInstructionRegister((byte) 50);
-                    instructionSet.SUBI(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.SUBI(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "33":
                     spr.setInstructionRegister((byte) 51);
-                    instructionSet.MULI(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.MULI(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "34":
                     spr.setInstructionRegister((byte) 52);
-                    instructionSet.DIVI(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.DIVI(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "35":
                     spr.setInstructionRegister((byte) 53);
-                    instructionSet.ANDI(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.ANDI(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "36":
                     spr.setInstructionRegister((byte) 54);
-                    instructionSet.ORI(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.ORI(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                     /*
                 case "37":
@@ -120,32 +122,32 @@ public class GeneralPurposeRegister {
 */
                 case "51":
                     spr.setInstructionRegister((byte) 81);
-                    instructionSet.MOVL(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.MOVL(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "52":
                     spr.setInstructionRegister((byte) 82);
-                    instructionSet.MOVR(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.MOVR(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 //Single Operand
                 case "71":
                     spr.setInstructionRegister((byte) 113);
-                    instructionSet.SHL(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.SHL(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "72":
                     spr.setInstructionRegister((byte) 114);
-                    instructionSet.SHR(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.SHR(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "73":
                     spr.setInstructionRegister((byte) 115);
-                    instructionSet.RTL(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.RTL(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "74":
                     spr.setInstructionRegister((byte) 116);
-                    instructionSet.RTR(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.RTR(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "75":
                     spr.setInstructionRegister((byte) 117);
-                    instructionSet.INC(Memory.createMemoryReadDisplay(true,false), GeneralPurposeRegister.createGPR(true), spr, i);
+                    instructionSet.INC(memoryWithRead, GeneralPurposeRegister.createGPR(true), spr, i);
                     break;
                 case "76":
                     spr.setInstructionRegister((byte) 118);
