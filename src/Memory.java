@@ -14,14 +14,23 @@ public class Memory {
     //hex array
     String[] hexInstr = new String[12];
 
-
+    static private Memory instance;
 
     public static Memory createMemory() {
-        return new Memory();
+        if(instance==null) {
+            instance = new Memory();
+        }
+        return instance;
     }
 
-    public static Memory createMemoryReadDisplay(boolean isRead, boolean isDisplay) {
-        return new Memory(isRead,isDisplay);
+    public static Memory getInstance(boolean isRead, boolean isDisplay) {
+        if(instance==null) {
+            if(!(isDisplay && isRead))
+            instance = new Memory();
+            else instance = new Memory(isRead,isDisplay);
+
+        }
+        return instance;
     }
 
 
@@ -74,7 +83,11 @@ public class Memory {
     public String[] DecToHex(byte memory[]) {
         int counter = 0;
         for (byte aByte : memory) {
-            hexInstr[counter] = String.format("%02x", aByte);
+            try {
+                hexInstr[counter] = String.format("%02x", aByte);
+            }
+            catch (ArrayIndexOutOfBoundsException ex) {
+            }
             counter++;
             if (codeCounter == counter) break;
         }

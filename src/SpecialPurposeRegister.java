@@ -5,15 +5,17 @@ public class SpecialPurposeRegister {
      * code counter last instruction
      *
      */
-
-
+    static private SpecialPurposeRegister instance;
     byte[] SPR = new byte[16];
-    Memory memory = Memory.createMemoryReadDisplay(true,false);
+    Memory memory = Memory.getInstance(true,false);
 
 
-    public static SpecialPurposeRegister createSPR(boolean isDisplay) {
-        if (!isDisplay) return new SpecialPurposeRegister();
-        else return new SpecialPurposeRegister(true);
+    public static SpecialPurposeRegister getInstance(boolean isDisplay) {
+        if(instance==null) {
+            if (isDisplay) instance = new SpecialPurposeRegister(isDisplay);
+            instance = new SpecialPurposeRegister(!isDisplay);
+        }
+        return instance;
     }
 
 
