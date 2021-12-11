@@ -4,8 +4,6 @@ import java.io.FileReader;
 
 public class Memory {
 
-
-
     //array of memory 64000 size type is byte
     //Memory array
     public byte[] memory = new byte[65536];
@@ -23,6 +21,7 @@ public class Memory {
         return instance;
     }
 
+
     public static Memory getInstance(boolean isRead, boolean isDisplay) {
         if(instance==null) {
             if(!(isDisplay && isRead))
@@ -32,11 +31,6 @@ public class Memory {
         }
         return instance;
     }
-
-
-
-
-
 
     private Memory() {
         readFile();
@@ -48,6 +42,22 @@ public class Memory {
         if (fileReading) readFile();
         if (displayingMemoryArray) displayMemory();
     }
+
+    /*
+     *Get Memory Frame
+     * 1 Frame is of 128 Bytes
+     * 65536/128 = 512 Pages Available
+     */
+
+    public void allocateFrames(int noOfFrames) {
+        int count;
+        for (int i = 0; i< noOfFrames;i++) {
+            count = 0;
+
+        }
+    }
+
+
     //File Reading
     public void readFile() {
         try {
@@ -111,7 +121,6 @@ public class Memory {
         } catch (NullPointerException e) {
 
         }
-
         return decimal;
     }
 
