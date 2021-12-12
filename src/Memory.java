@@ -49,16 +49,15 @@ public class Memory {
      * 65536/128 = 512 Pages Available
      */
 
-    public void allocateFrames(int noOfFrames) {
-        int count;
-        for (int i = 0; i< noOfFrames;i++) {
-            count = 0;
+    public void allocateFrames(ProcessCreation pc) {
 
-        }
     }
+
+    //Give process a frame
 
 
     //File Reading
+    
     public void readFile() {
         try {
             File myFile = new File("C:\\Users\\Muhammad Shaheer\\Desktop\\IBA\\Fifth Semester\\OS\\ProjectPhase1\\src\\p1.txt");
